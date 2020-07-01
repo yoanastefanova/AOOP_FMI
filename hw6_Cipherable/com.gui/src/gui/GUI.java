@@ -16,6 +16,7 @@ import javafx.stage.Stage;
 import providers.Result;
 import providers.Wrapper;
 import providers.CipherGenerator;
+import services.Cipherable;
 
 import java.util.Arrays;
 
@@ -86,12 +87,13 @@ public class GUI extends Application {
 
         al = new Alert(Alert.AlertType.INFORMATION);
         al.setTitle("Random subsequence of letter A-Z");
-        al.setHeaderText("Count distinct characters out of" + txtSize.getText());
+        al.setHeaderText("Count distinct characters out of " + txtSize.getText());
         al.setContentText("Chars: " + Arrays.toString(res.getChars()) + "\n" + "Result: " + res.getData());
         al.showAndWait();
     }
 
     private void btnGenerateRandomOnAction() {
+
         String sd = txtSeed.getText();
 
         Wrapper wrap = new Wrapper(Integer.parseInt(txtSize.getText()));
@@ -102,9 +104,11 @@ public class GUI extends Application {
 
         al = new Alert(Alert.AlertType.INFORMATION);
         al.setTitle("Generate random sequence");
-        al.setHeaderText("Count distinct characters out of" + txtSize.getText());
+        al.setHeaderText("Count distinct characters out of " + txtSize.getText());
         al.setContentText("Chars: " + Arrays.toString(res.getChars()) + "\n" + "Result: " + res.getData());
         al.showAndWait();
+
+
     }
 
     public static void main(String[] args) {

@@ -11,16 +11,13 @@ public class Result {
         setData(data);
     }
 
-    public Result(){
+    public Result() {
         setChars(null);
         setData(0);
     }
 
     public void setChars(char[] chars) {
-        int len = chars.length;
-        for (int i = 0; i < len; i++) {
-            this.chars[i] = chars[i];
-        }
+        this.chars = chars.clone();
     }
 
     private void setData(int data) {
@@ -41,7 +38,7 @@ public class Result {
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         StringBuilder str = new StringBuilder("Data: " + data + "%n Chars: ");
         for (int i = 0; i < chars.length; i++) {
             str.append(chars[i]).append(" ");
